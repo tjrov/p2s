@@ -1,5 +1,5 @@
 #kwu 11/16/2019
-class Viewfinder:
+class ViewFinder:
     #constructor
     def __init__(self):
         print("Initializing Viewfinder")
