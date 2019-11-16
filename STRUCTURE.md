@@ -13,7 +13,6 @@
     ├── frontend
     │   ├── dashboard
     │   │   ├── __init__.py
-    │   │   ├── gui.py
     │   │   └── widgets
     │   │       ├── actuators.py
     │   │       ├── cameras.py
@@ -24,7 +23,6 @@
     │   │       ├── temperature.py
     │   │       └── thrusters.py
     │   ├── __init__.py
-    │   ├── frontend.py
     │   └── viewfinder
     │       └── __init__.py
     ├── main.py
