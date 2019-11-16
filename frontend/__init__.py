@@ -1,5 +1,5 @@
-from .dashboard import Dashboard
-from .viewfinder import Viewfinder
+from .dashboard import *
+from .viewfinder import *
 
 class Frontend:
     dashboard = Dashboard()
