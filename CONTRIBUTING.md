@@ -13,8 +13,9 @@ Pushing code to the `master` branch has been blocked. So in order to merge your 
 3. Commit to the new branch and work off it.
     * Make sure to push your branch to `origin`, that is push it to GitHub
 4. Open a pull request, once you have finished the issue.
-5. Wait for approval or revisions
-  * A pull request requires at least one administrator approval to merge ino `master`
+5. Wait for approval or revisions (A pull request requires at least one administrator approval to merge into `master`)
+6. After approval close the issue you were working on
+7. Delete the branch you were working on (as it has already been merged with `master`)
 
 ## Python
 Install the newest version of python from [this link]("https://www.python.org/downloads/") if you do not already have it.
