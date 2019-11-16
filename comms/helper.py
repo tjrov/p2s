@@ -5,7 +5,7 @@ from serial import Serial, SerialException
 from serial.tools.list_ports import comports
 
 
-def list_serial_ports(debug):
+def list_serial_ports():
     """ Lists serial port names
         :raises EnvironmentError: On unsupported or unknown platforms
         :returns A list of the serial ports available on the system
@@ -31,7 +31,7 @@ def list_serial_ports(debug):
         except SerialException:
             pass
 
-    if debug and len(result) == 0 and len(comports()) > 0:
+    if len(result) == 0 and len(comports()) > 0:
         print(f"Fix permissions for these devices (sudo chmod 777): {[port.device for port in comports()]}")
         print("Or close the serial port if its already open\n")
 
