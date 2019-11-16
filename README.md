@@ -12,3 +12,7 @@ The contributing guidelines can be found [here](CONTRIBUTING.md).
     * Requires a serial connection to a device running the piloting framework code
     * Requires at least one camera connection from the ROV
 * Run `python main.py test` to run tests
+
+### Project Structure
+The project structure outline can be found [here](STRUCTURE.md)
+
