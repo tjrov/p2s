@@ -13,6 +13,7 @@
     ├── frontend
     │   ├── dashboard
     │   │   ├── __init__.py
+    │   │   ├── gui.py
     │   │   └── widgets
     │   │       ├── actuators.py
     │   │       ├── cameras.py
