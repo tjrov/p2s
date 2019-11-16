@@ -1,6 +1,6 @@
 from tkinter import *
 
-from frontend import frontend
+from .frontend import *
 #follows hierarchy
 
 root = Tk()
