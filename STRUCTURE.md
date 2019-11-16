@@ -24,6 +24,7 @@
     │   │       ├── temperature.py
     │   │       └── thrusters.py
     │   ├── __init__.py
+    │   ├── frontend.py
     │   └── viewfinder
     │       └── __init__.py
     ├── main.py
