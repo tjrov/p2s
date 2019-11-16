@@ -31,5 +31,12 @@ class Comms:
 
         return serial, serial_reader, serial_writer
 
+    def write_packet(self, packet):
+        if hasattr(packet, "bytes"):
+            # Ensures the packet has a list of writable bytes
+            self.writer.queue.append(packet)
+        else:
+            raise RuntimeError("Received a non-packet object")
+
     def __str__(self):
         return f"On port {self.serial_port} at a baudrate of {self.baudrate}"

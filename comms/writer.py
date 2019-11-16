@@ -34,10 +34,3 @@ class SerialWriter(Thread):
                 for byte in packet.bytes:
                     self.serial.write(byte)
                 sleep(1)
-
-    def write_packet(self, packet):
-        if hasattr(packet, "bytes"):
-            # Ensures the packet has a list of writable bytes
-            self.queue.append(packet)
-        else:
-            raise RuntimeError("Received a non-packet object")
