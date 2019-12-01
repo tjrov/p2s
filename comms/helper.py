@@ -32,7 +32,9 @@ def list_serial_ports():
             pass
 
     if len(result) == 0 and len(comports()) > 0:
-        print(f"Fix permissions for these devices (sudo chmod 777): {[port.device for port in comports()]}")
+        print(
+            f"Fix permissions for these devices (sudo chmod 777): {[port.device for port in comports()]}"
+        )
         print("Or close the serial port if its already open\n")
 
     return result

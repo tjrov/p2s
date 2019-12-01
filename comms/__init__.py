@@ -6,7 +6,6 @@ from .writer import SerialWriter, DebugWriter
 
 
 class Comms:
-
     def __init__(self, baudrate, debug=False):
         """ Communicates with a device via serial on at a given buadrate"""
 

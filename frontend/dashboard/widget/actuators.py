@@ -10,7 +10,14 @@ class ActuatorWidget(Widget):
         self.left_x, self.left_y = left_corner
         self.canvas = canvas
 
-        canvas.create_rectangle(self.left_x, self.left_y, self.left_x + self.WIDTH, self.left_y + self.HEIGHT, fill='red', outline='yellow')
+        canvas.create_rectangle(
+            self.left_x,
+            self.left_y,
+            self.left_x + self.WIDTH,
+            self.left_y + self.HEIGHT,
+            fill="red",
+            outline="yellow",
+        )
 
     def update(self, data: dict):
         raise NotImplementedError
