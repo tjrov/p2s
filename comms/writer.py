@@ -3,7 +3,6 @@ from threading import Thread
 
 
 class DebugWriter(Thread):
-
     def __init__(self, serial):
         Thread.__init__(self)
         self.serial = serial
@@ -16,12 +15,11 @@ class DebugWriter(Thread):
                 byte = bytes([num])
                 self.serial.write(byte)
             else:
-                byte = input("write? ").encode('utf-8')
+                byte = input("write? ").encode("utf-8")
                 self.serial.write(byte)
 
 
 class SerialWriter(Thread):
-
     def __init__(self, serial):
         Thread.__init__(self)
         self.serial = serial

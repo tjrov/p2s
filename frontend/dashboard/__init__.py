@@ -1,1 +1,1 @@
-from .widget import *
+from .dashboard import Dashboard
