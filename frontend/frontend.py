@@ -1,7 +1,5 @@
 from .dashboard import Dashboard
 from .viewfinder import Viewfinder
-
-
 class Frontend:
     def __init__(self):
         self.dashboard = Dashboard()
@@ -10,5 +8,4 @@ class Frontend:
     def start(self):
         while True:
             self.dashboard.update()
-            self.dashboard.update_widget("ControllerWidget")
             self.viewfinder.update()
