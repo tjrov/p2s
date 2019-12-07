@@ -10,14 +10,14 @@ class TemperatureWidget(Widget):
     def __init__(self, left_corner, canvas):
         self.left_x, self.left_y = left_corner
         self.canvas = canvas
-        
+
         fill = "red"
         font = Font(family="SansSerif", size=50, weight="bold")
-        degreeSign = u'\N{DEGREE SIGN}'
-        (w, h) = (font.measure("100 " + degreeSign + "F"), font.metrics("linespace"))
+        degree_sign = u'\N{DEGREE SIGN}'
+        (w, h) = (font.measure("100 " + degree_sign + "F"), font.metrics("linespace"))
 
         self.textLabel = self.canvas.create_text(self.left_x + self.WIDTH/2, self.left_y + self.HEIGHT/2, fill=fill, font="SansSerif 50 bold",
-                                text="100 " + degreeSign + "F")
+                                text="100 " + degree_sign + "F")
 
 
     def update(self, data: dict):
