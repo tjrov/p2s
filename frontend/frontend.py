@@ -10,4 +10,5 @@ class Frontend:
     def start(self):
         while True:
             self.dashboard.update()
+            self.dashboard.update_widget("ControllerWidget")
             self.viewfinder.update()

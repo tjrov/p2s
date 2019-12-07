@@ -6,6 +6,7 @@ from .widget import (
     HeadingWidget,
     TemperatureWidget,
     ThrustersWidget,
+    ControllerWidget,
 )
 
 from tkinter import Tk, Canvas
@@ -31,6 +32,7 @@ class Dashboard:
             "HeadingWidget": HeadingWidget((250, 150), canvas),
             "TemperatureWidget": TemperatureWidget((250, 0), canvas),
             "ThrustersWidget": ThrustersWidget((100, 500), canvas,),
+            "ControllerWidget": ControllerWidget((0, 900), canvas,),
         }
 
         self.root.update()
@@ -40,6 +42,11 @@ class Dashboard:
             return
 
         self.widgets[widget_name].update(data)
+    #for controller
+    def update_widget(self, widget_name: str):
+        if widget_name not in self.widgets:
+            return
+        self.widgets[widget_name].update()
 
     def update(self):
         self.root.update()
