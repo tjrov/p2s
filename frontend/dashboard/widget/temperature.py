@@ -10,14 +10,7 @@ class TemperatureWidget(Widget):
     def __init__(self, left_corner, canvas):
         self.left_x, self.left_y = left_corner
         self.canvas = canvas
-        canvas.create_rectangle(
-            self.left_x,
-            self.left_y,
-            self.left_x + self.WIDTH,
-            self.left_y + self.HEIGHT,
-            fill="black",
-            outline="yellow",
-        )
+        
         fill = "red"
         font = Font(family="SansSerif", size=50, weight="bold")
         degreeSign = u'\N{DEGREE SIGN}'
