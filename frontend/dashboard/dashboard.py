@@ -42,11 +42,6 @@ class Dashboard:
             return
 
         self.widgets[widget_name].update(data)
-    #for controller
-    def update_widget(self, widget_name: str):
-        if widget_name not in self.widgets:
-            return
-        self.widgets[widget_name].update()
 
     def update(self):
         self.root.update()
