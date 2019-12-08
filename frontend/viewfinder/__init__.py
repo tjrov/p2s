@@ -12,4 +12,4 @@ class Viewfinder:
 
     # updates image shown
     def update(self):
-        print("should updataete")
+        pass

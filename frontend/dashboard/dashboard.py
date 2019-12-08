@@ -6,6 +6,7 @@ from .widget import (
     HeadingWidget,
     TemperatureWidget,
     ThrustersWidget,
+    ControllerWidget,
 )
 
 from tkinter import Tk, Canvas
@@ -31,6 +32,7 @@ class Dashboard:
             "HeadingWidget": HeadingWidget((250, 150), canvas),
             "TemperatureWidget": TemperatureWidget((250, 0), canvas),
             "ThrustersWidget": ThrustersWidget((100, 500), canvas,),
+            "ControllerWidget": ControllerWidget((0, 900), canvas,),
         }
 
         self.root.update()
