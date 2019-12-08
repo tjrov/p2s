@@ -1,7 +1,11 @@
 from frontend import Frontend
 from manipulator import Manipulator
 
-f = Frontend()
-m = Manipulator()
-m.start()
-f.start()
+if __name__ == '__main__':
+    # TODO: XInput doesn't work with *nix devices, so we need to look into a different module
+
+    frontend = Frontend()
+    manipulator = Manipulator()
+
+    manipulator.start()
+    frontend.start()
