@@ -1,12 +1,21 @@
-from .x_input import XInputJoystick
 from operator import attrgetter
 from threading import Thread
+
+IS_WINDOWS = True
+
+try:
+    from .x_input import XInputJoystick
+except AttributeError:
+    IS_WINDOWS = False
 
 
 class Manipulator(Thread):
     def __init__(self):
         Thread.__init__(self)
         # Joystick Setup
+        if not IS_WINDOWS:
+            return
+
         joysticks = XInputJoystick.enumerate_devices()
         device_numbers = list(map(attrgetter("device_number"), joysticks))
         print(f"found {len(joysticks)} devices: {device_numbers}")
@@ -19,6 +28,9 @@ class Manipulator(Thread):
         print(battery)
 
     def run(self):
+
+        if not IS_WINDOWS:
+            return
 
         if not self.joystick:
             return
