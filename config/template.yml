@@ -1,0 +1,4 @@
+udp:
+  ip:
+    ground_station: 0.0.0.0
+    rov: 0.0.0.0
