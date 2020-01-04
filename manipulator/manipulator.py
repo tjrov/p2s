@@ -1,5 +1,3 @@
-# DX
-import math
 from threading import Thread
 import pygame
 
@@ -9,7 +7,9 @@ class Manipulator(Thread):
         Thread.__init__(self)
 
         pygame.init()
-        pygame.display.set_mode((100, 100))  # big display not needed, no display = no inputs
+        pygame.display.set_mode(
+            (100, 100)
+        )  # big display not needed, no display = no inputs
         pygame.display.set_caption("Testing X-BOX controller")
 
         joysticks = []
@@ -24,7 +24,9 @@ class Manipulator(Thread):
         keep_playing = True  # variable made for future use
 
         while keep_playing:
-            clock.tick(60)  # not sure which refresh rate is optimal, it seems that 0 is a bit too sensitive
+            clock.tick(
+                60
+            )  # not sure which refresh rate is optimal, it seems that 0 is a bit too sensitive
             for event in pygame.event.get():
                 if event.type == pygame.JOYAXISMOTION:
                     if event.axis == 0:
@@ -54,6 +56,7 @@ class Manipulator(Thread):
                             self.trigger_right(event.value)
                 if event.type == pygame.JOYBUTTONDOWN:
                     self.button(event.button, False)
+
                 if event.type == pygame.JOYBUTTONUP:
                     self.button(event.button, True)
                 if event.type == pygame.JOYHATMOTION:
@@ -70,34 +73,50 @@ class Manipulator(Thread):
 
         pygame.quit()
 
-    def joy_one_up(self, value):  # returns value (pos value of joystick) is [-1, 0) -1 being the farthest up
+    def joy_one_up(
+        self, value
+    ):  # returns value (pos value of joystick) is [-1, 0) -1 being the farthest up
         print("joystick one: up ", value)
 
     def joy_one_down(self, value):  # returns value is (0, 1] 1 being the farthest down
         print("joystick one: down ", value)
 
-    def joy_one_left(self, value):  # returns value is [-1, 0) -1 being the farthest left
+    def joy_one_left(
+        self, value
+    ):  # returns value is [-1, 0) -1 being the farthest left
         print("joystick one: left ", value)
 
-    def joy_one_right(self, value):  # returns value is [-1, 0) -1 being the farthest right
+    def joy_one_right(
+        self, value
+    ):  # returns value is [-1, 0) -1 being the farthest right
         print("joystick one: right ", value)
 
-    def joy_two_up(self, value):  # returns value (pos value of joystick) is [-1, 0) -1 being the farthest up
+    def joy_two_up(
+        self, value
+    ):  # returns value (pos value of joystick) is [-1, 0) -1 being the farthest up
         print("joystick two: up ", value)
 
     def joy_two_down(self, value):  # returns value is (0, 1] 1 being the farthest down
         print("joystick two: down ", value)
 
-    def joy_two_left(self, value):  # returns value is [-1, 0) -1 being the farthest left
+    def joy_two_left(
+        self, value
+    ):  # returns value is [-1, 0) -1 being the farthest left
         print("joystick two: left ", value)
 
-    def joy_two_right(self, value):  # returns value is [-1, 0) -1 being the farthest right
+    def joy_two_right(
+        self, value
+    ):  # returns value is [-1, 0) -1 being the farthest right
         print("joystick two: right ", value)
 
-    def trigger_left(self, value):  # returns value is (0, 1] 1 being the trigger pushed down farthest
+    def trigger_left(
+        self, value
+    ):  # returns value is (0, 1] 1 being the trigger pushed down farthest
         print("trigger left: ", value)
 
-    def trigger_right(self, value):  # returns value is [-1, 0) -1 being the trigger pushed down farthest
+    def trigger_right(
+        self, value
+    ):  # returns value is [-1, 0) -1 being the trigger pushed down farthest
         print("trigger right: ", value)
 
     def d_pad_up(self):
@@ -115,7 +134,9 @@ class Manipulator(Thread):
     def d_pad_center(self):  # d-pad returned to resting state
         print("d-pad centered")
 
-    def button(self, id, state):  # s tate is boolean -- True means button is now up, False means button is now down
+    def button(
+        self, id, state
+    ):  # s tate is boolean -- True means button is now up, False means button is now down
         if state:  # id refers to which button is being pressed
             print("button ", id, " up")
         else:  # here are what ids are which button so i can save u some testing
