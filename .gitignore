@@ -10,6 +10,9 @@ ehthumbs.db
 Thumbs.db
 .vscode
 
+config.yml
+*/config.yml
+
 # API KEYS
 *.secret
 *.env
