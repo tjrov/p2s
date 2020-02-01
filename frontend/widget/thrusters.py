@@ -10,7 +10,7 @@ class ThrustersWidget(Widget):
 
     def __init__(self, left_corner, canvas):
         self.photo = myImage = PhotoImage(
-            file="frontend/dashboard/widget/rov-thrusters_image.gif"
+            file="frontend/resources/rov-thrusters_image.gif"
         )
         self.left_x, self.left_y = left_corner
         self.canvas = canvas
@@ -18,44 +18,44 @@ class ThrustersWidget(Widget):
             self.left_x + self.WIDTH / 2, self.left_y + self.HEIGHT / 2, image=myImage
         )
         self.top_left = canvas.create_text(
-            self.left_x + 100,
-            self.left_y + 75,
-            font=("Serif", "25"),
+            self.left_x + 75,
+            self.left_y + 50,
+            font=("Serif", "20"),
             text="top-left",
             fill="red",
         )
         self.mid_left = canvas.create_text(
-            self.left_x + 100,
-            self.left_y + 200,
-            font=("Serif", "25"),
+            self.left_x + 75,
+            self.left_y + 150,
+            font=("Serif", "20"),
             text="mid-left",
             fill="red",
         )
         self.bottom_left = canvas.create_text(
-            self.left_x + 100,
-            self.left_y + 300,
-            font=("Serif", "25"),
+            self.left_x + 75,
+            self.left_y + 250,
+            font=("Serif", "20"),
             text="bottom-left",
             fill="red",
         )
         self.top_right = canvas.create_text(
-            self.left_x + 300,
-            self.left_y + 75,
-            font=("Serif", "25"),
+            self.left_x + 225,
+            self.left_y + 50,
+            font=("Serif", "20"),
             text="top-right",
             fill="red",
         )
         self.mid_right = canvas.create_text(
-            self.left_x + 300,
-            self.left_y + 200,
-            font=("Serif", "25"),
+            self.left_x + 225,
+            self.left_y + 150,
+            font=("Serif", "20"),
             text="mid-right",
             fill="red",
         )
         self.bottom_right = canvas.create_text(
-            self.left_x + 300,
-            self.left_y + 300,
-            font=("Serif", "25"),
+            self.left_x + 225,
+            self.left_y + 250,
+            font=("Serif", "20"),
             text="bottom-right",
             fill="red",
         )
