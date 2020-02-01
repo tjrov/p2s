@@ -101,6 +101,15 @@ class Dashboard:
             outline=accent_color
         )
 
+        canvas.create_text(
+            self.WIDTH - 30,
+            self.HEIGHT - 20,
+            fill="white",
+            font="Courier 10",
+            text="TJHSST Python Piloting Software",
+            anchor="se",
+        ),
+
         self.manipulator = Manipulator(self.root, comms)
 
         self.widgets = {
