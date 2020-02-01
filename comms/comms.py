@@ -36,6 +36,9 @@ class Comms:
 
         return sending_socket, receiving_socket, udp_reader, udp_writer
 
+    def set_dashboard(self, dashboard):
+        self.reader.dashboard = dashboard
+
     def write(self, message):
         if isinstance(message, str):
             self.writer.queue.append(message.encode('utf-8'))

@@ -96,6 +96,10 @@ class Dashboard:
 
         self.manipulator = Manipulator(self.root, comms)
 
+        self.widgets = {
+            "PiConsoleWidget": console_widget
+        }
+
     def update_widget(self, widget_name: str, data: dict):
         if widget_name not in self.widgets:
             return

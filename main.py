@@ -14,6 +14,7 @@ if __name__ == "__main__":
         exit(0)
 
     comms = Comms(config)
-
     dashboard = Dashboard(comms)
+    comms.set_dashboard(dashboard)
+
     dashboard.start()
