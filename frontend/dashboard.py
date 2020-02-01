@@ -73,7 +73,7 @@ class Dashboard:
         )
         thruster_widget = ThrustersWidget((1020, 406), canvas)
 
-        self.myLogo = PhotoImage(file="frontend/resources/logoGif.gif")
+        self.myLogo = PhotoImage(file="frontend/resources/logo.gif")
         canvas.create_image(
             680, 80, image=self.myLogo
         )
