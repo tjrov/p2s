@@ -4,7 +4,6 @@ from frontend.widget import (
     VideoWidget,
     DepthWidget,
     GyroscopeWidget,
-    HeadingWidget,
     PiConsoleWidget,
     TemperatureWidget,
     ThrustersWidget,
@@ -47,21 +46,29 @@ class Dashboard:
             30,
             275,
             340,
-            490,
+            408,
             fill=accent_color,
             outline=accent_color,
         )
-        heading = HeadingWidget((40, 285), canvas)
 
         canvas.create_rectangle(
             30,
-            520,
+            438,
             340,
-            735,
+            571,
             fill=accent_color,
             outline=accent_color,
         )
-        gyro_widget = GyroscopeWidget((40, 530), canvas)
+
+        canvas.create_rectangle(
+            30,
+            601,
+            340,
+            734,
+            fill=accent_color,
+            outline=accent_color,
+        )
+        gyro_widget = GyroscopeWidget((40, 285), canvas)
 
         canvas.create_rectangle(
             380,
