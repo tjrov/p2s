@@ -1,9 +1,10 @@
 from frontend.widget import (
     ActuatorWidget,
-    CameraWidget,
+    VideoWidget,
     DepthWidget,
     GyroscopeWidget,
     HeadingWidget,
+    RovPiLogWidget,
     TemperatureWidget,
     ThrustersWidget,
     ControllerWidget,
@@ -83,23 +84,9 @@ class Dashboard:
             outline=accent_color
         )
 
-        canvas.create_rectangle(
-            380,
-            158,
-            980,
-            608,
-            fill=accent_color,
-            outline=accent_color,
-        )
+        video_widget = VideoWidget((380, 158), canvas)
 
-        canvas.create_rectangle(
-            380,
-            638,
-            980,
-            736,
-            fill=accent_color,
-            outline=accent_color
-        )
+        log_widget = RovPiLogWidget((380, 638), canvas)
 
         canvas.create_rectangle(
             1020,

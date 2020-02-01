@@ -11,6 +11,6 @@ class GyroscopeWidget(Widget):
         self.canvas = canvas
         self.text_id = canvas.create_text(self.left_x + self.WIDTH / 2, self.left_y + self.HEIGHT / 2, font=("Serif", "25"))
         self.update({"gyro": 2048})
-3
+
     def update(self, data: dict):
         self.canvas.itemconfig(self.text_id, text=str(data["gyro"]) + "°/s")
