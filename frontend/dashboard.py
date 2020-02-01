@@ -27,56 +27,37 @@ class Dashboard:
 
         self.root = root
 
-        canvas = Canvas(width=self.WIDTH, height=self.HEIGHT, bg=background_color, bd=0,highlightbackground=background_color)
+        canvas = Canvas(
+            width=self.WIDTH,
+            height=self.HEIGHT,
+            bg=background_color,
+            bd=0,
+            highlightbackground=background_color,
+        )
         canvas.pack()
 
         accent_color = "#1C326A"
 
         canvas.create_rectangle(
-            30,
-            30,
-            340,
-            245,
-            fill=accent_color,
-            outline=accent_color,
+            30, 30, 340, 245, fill=accent_color, outline=accent_color,
         )
         temperature_widget = TemperatureWidget((40, 40), canvas)
 
         canvas.create_rectangle(
-            30,
-            275,
-            340,
-            408,
-            fill=accent_color,
-            outline=accent_color,
+            30, 275, 340, 408, fill=accent_color, outline=accent_color,
         )
 
         canvas.create_rectangle(
-            30,
-            438,
-            340,
-            571,
-            fill=accent_color,
-            outline=accent_color,
+            30, 438, 340, 571, fill=accent_color, outline=accent_color,
         )
 
         canvas.create_rectangle(
-            30,
-            601,
-            340,
-            734,
-            fill=accent_color,
-            outline=accent_color,
+            30, 601, 340, 734, fill=accent_color, outline=accent_color,
         )
         gyro_widget = GyroscopeWidget((40, 285), canvas)
 
         canvas.create_rectangle(
-            380,
-            30,
-            980,
-            128,
-            fill=accent_color,
-            outline=accent_color
+            380, 30, 980, 128, fill=accent_color, outline=accent_color
         )
 
         video_widget = VideoWidget((380, 158), canvas)
@@ -84,21 +65,11 @@ class Dashboard:
         console_widget = PiConsoleWidget((380, 638), canvas)
 
         canvas.create_rectangle(
-            1020,
-            48,
-            1330,
-            358,
-            fill=accent_color,
-            outline=accent_color
+            1020, 48, 1330, 358, fill=accent_color, outline=accent_color
         )
 
         canvas.create_rectangle(
-            1020,
-            406,
-            1330,
-            716,
-            fill=accent_color,
-            outline=accent_color
+            1020, 406, 1330, 716, fill=accent_color, outline=accent_color
         )
 
         canvas.create_text(
@@ -113,7 +84,10 @@ class Dashboard:
         self.manipulator = Manipulator(self.root, comms)
 
         self.widgets = {
-            "PiConsoleWidget": console_widget
+            "TemperatureWidget": temperature_widget,
+            "GyroscopeWidget": gyro_widget,
+            "PiConsoleWidget": console_widget,
+            "VideoWidget": video_widget,
         }
 
     def update_widget(self, widget_name: str, data: dict):

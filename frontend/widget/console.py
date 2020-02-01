@@ -23,7 +23,7 @@ class PiConsoleWidget(Widget):
         self.logs = [
             "Console",
             "Logs from the pi will be printed to the console,",
-            "along with unidentifiable messages."
+            "along with unidentifiable messages.",
         ]
 
         self.text_items = [
@@ -34,7 +34,7 @@ class PiConsoleWidget(Widget):
                 font="Courier 14",
                 text=self.logs[0],
                 anchor="w",
-                width=self.WIDTH - 10
+                width=self.WIDTH - 10,
             ),
             self.canvas.create_text(
                 self.left_x + 10,
@@ -43,7 +43,7 @@ class PiConsoleWidget(Widget):
                 font="Courier 14",
                 text=self.logs[1],
                 anchor="w",
-                width=self.WIDTH - 10
+                width=self.WIDTH - 10,
             ),
             self.canvas.create_text(
                 self.left_x + 10,
@@ -52,7 +52,7 @@ class PiConsoleWidget(Widget):
                 font="Courier 14",
                 text=self.logs[2],
                 anchor="w",
-                width=self.WIDTH - 10
+                width=self.WIDTH - 10,
             ),
         ]
 
@@ -62,5 +62,5 @@ class PiConsoleWidget(Widget):
             self.logs.append(data["log"])
             for index, item in enumerate(self.text_items):
                 self.canvas.itemconfig(
-                    item, fill="white", text=self.logs[index][:self.MAX_LEN + 1]
+                    item, fill="white", text=self.logs[index][: self.MAX_LEN + 1]
                 )

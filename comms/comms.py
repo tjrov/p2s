@@ -41,7 +41,7 @@ class Comms:
 
     def write(self, message):
         if isinstance(message, str):
-            self.writer.queue.append(message.encode('utf-8'))
+            self.writer.queue.append(message.encode("utf-8"))
         else:
             raise RuntimeError("Received a non-str message")
 

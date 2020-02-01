@@ -1,6 +1,7 @@
 from enum import Enum
 from comms import Comms
 
+
 class Bindings(Enum):
     FORWARD = "<w>"
     STRAFE_LEFT = "<a>"
@@ -11,7 +12,6 @@ class Bindings(Enum):
 
 
 class Manipulator:
-
     def __init__(self, root, comms: Comms):
         root.bind(Bindings.FORWARD.value, self.forward)
         root.bind(Bindings.STRAFE_LEFT.value, self.strafe_left)

@@ -13,4 +13,6 @@ class Reader(Thread):
             if self.dashboard is None:
                 print("Waiting for dashboard object.")
                 continue
-            self.dashboard.update_widget("PiConsoleWidget", {"log": f"Received: {data} from {address}"})
+            self.dashboard.update_widget(
+                "PiConsoleWidget", {"log": f"Received: {data} from {address}"}
+            )

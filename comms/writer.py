@@ -7,7 +7,6 @@ class Writer(Thread):
         self.socket = socket
         self.target = (target_hostname, udp_port)
 
-
     def run(self):
         while True:
             message_type = input("int or str? ") == "int"

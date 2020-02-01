@@ -17,10 +17,10 @@ class TemperatureWidget(Widget):
         self.canvas.create_text(
             self.left_x + 5,
             self.left_y + 10,
-            fill='white',
+            fill="white",
             font="Courier 12",
             text=f"AMBIENT TEMPERATURE",
-            anchor='nw'
+            anchor="nw",
         )
 
         fill = self.BLUE
