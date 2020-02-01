@@ -15,5 +15,5 @@ if __name__ == "__main__":
 
     comms = Comms(config)
 
-    dashboard = Dashboard()
+    dashboard = Dashboard(comms)
     dashboard.start()

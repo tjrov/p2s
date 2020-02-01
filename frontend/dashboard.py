@@ -1,3 +1,4 @@
+from comms import Comms
 from frontend.widget import (
     ActuatorWidget,
     VideoWidget,
@@ -9,7 +10,6 @@ from frontend.widget import (
     ThrustersWidget,
     ControllerWidget,
 )
-
 from frontend.manipulator import Manipulator
 
 from tkinter import Tk, Canvas
@@ -19,7 +19,7 @@ class Dashboard:
     WIDTH = 1360
     HEIGHT = 765
 
-    def __init__(self):
+    def __init__(self, comms: Comms):
         background_color = "#081035"
 
         root = Tk()
@@ -94,7 +94,7 @@ class Dashboard:
             outline=accent_color
         )
 
-        self.manipulator = Manipulator(self.root)
+        self.manipulator = Manipulator(self.root, comms)
 
     def update_widget(self, widget_name: str, data: dict):
         if widget_name not in self.widgets:
