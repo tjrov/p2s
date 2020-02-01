@@ -8,7 +8,7 @@ class UDPComms:
 
     UDP_PORT = 5005
 
-    def __init__(self, config, debug=False):
+    def __init__(self, config):
         """ Communicates with a device via serial on at a given buadrate"""
         self.host_ip = config["udp"]["ip"]["ground_station"]
         self.target_ip = config["udp"]["ip"]["rov"]
@@ -18,9 +18,9 @@ class UDPComms:
             self.receiving_socket,
             self.reader,
             self.writer,
-        ) = self.comms_config(debug)
+        ) = self.comms_config()
 
-    def comms_config(self, debug):
+    def comms_config(self):
         """ Creates a Serial, SerialReader, SerialWriter, DebugWriter based on given preferences """
 
         sending_socket = socket(AF_INET, SOCK_DGRAM)
@@ -33,10 +33,6 @@ class UDPComms:
 
         udp_writer = UDPWriter(sending_socket, self.target_ip, self.UDP_PORT)
         udp_writer.start()
-
-        if debug:
-            debug_writer = UDPDebugWriter(sending_socket, self.target_ip, self.UDP_PORT)
-            debug_writer.start()
 
         return sending_socket, receiving_socket, udp_reader, udp_writer
 

@@ -1,4 +1,4 @@
-from .widget import (
+from frontend.widget import (
     ActuatorWidget,
     CameraWidget,
     DepthWidget,
@@ -9,7 +9,10 @@ from .widget import (
     ControllerWidget,
 )
 
+from frontend.manipulator import Manipulator
+
 from tkinter import Tk, Canvas
+from enum import Enum
 
 
 class Dashboard:
@@ -35,7 +38,7 @@ class Dashboard:
             "ControllerWidget": ControllerWidget((0, 900), canvas,),
         }
 
-        self.root.update()
+        self.manipulator = Manipulator(self.root)
 
     def update_widget(self, widget_name: str, data: dict):
         if widget_name not in self.widgets:
@@ -45,3 +48,6 @@ class Dashboard:
 
     def update(self):
         self.root.update()
+
+    def start(self):
+        self.root.mainloop()
