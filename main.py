@@ -3,7 +3,7 @@ from yaml import safe_load
 from sys import exit
 
 from frontend import Dashboard
-from udp_comms import UDPComms
+from comms import Comms
 
 if __name__ == "__main__":
     try:
@@ -13,7 +13,7 @@ if __name__ == "__main__":
         print("Please copy config/template.yml to config/config.yml")
         exit(0)
 
-    comms = UDPComms(config)
+    comms = Comms(config)
 
     dashboard = Dashboard()
     dashboard.start()

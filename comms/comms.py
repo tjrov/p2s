@@ -1,10 +1,10 @@
 from socket import socket, AF_INET, SOCK_DGRAM
 
-from .reader import UDPReader
-from .writer import UDPWriter, UDPDebugWriter
+from .reader import Reader
+from .writer import UDPWriter, Writer
 
 
-class UDPComms:
+class Comms:
 
     UDP_PORT = 5005
 
@@ -28,7 +28,7 @@ class UDPComms:
 
         receiving_socket.bind((self.host_ip, self.UDP_PORT))
 
-        udp_reader = UDPReader(receiving_socket)
+        udp_reader = Reader(receiving_socket)
         udp_reader.start()
 
         udp_writer = UDPWriter(sending_socket, self.target_ip, self.UDP_PORT)
@@ -36,12 +36,11 @@ class UDPComms:
 
         return sending_socket, receiving_socket, udp_reader, udp_writer
 
-    def write_packet(self, packet):
-        if hasattr(packet, "get_packet"):
-            # Ensures the packet has a list of writable bytes
-            self.writer.queue.append(packet)
+    def write(self, message):
+        if isinstance(message, str):
+            self.writer.queue.append(message.encode('utf-8'))
         else:
-            raise RuntimeError("Received a non-packet object")
+            raise RuntimeError("Received a non-str message")
 
     def __str__(self):
         return f"Target hostname is {self.target_ip} on port {self.UDP_PORT}"

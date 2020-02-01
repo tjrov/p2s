@@ -1,7 +1,7 @@
 from threading import Thread
 
 
-class UDPReader(Thread):
+class Reader(Thread):
     def __init__(self, socket):
         Thread.__init__(self)
         self.socket = socket
