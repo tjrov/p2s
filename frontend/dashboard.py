@@ -11,7 +11,7 @@ from frontend.widget import (
 )
 from frontend.manipulator import Manipulator
 
-from tkinter import Tk, Canvas
+from tkinter import Tk, Canvas, PhotoImage
 
 
 class Dashboard:
@@ -72,6 +72,11 @@ class Dashboard:
             1020, 406, 1330, 716, fill=accent_color, outline=accent_color
         )
         thruster_widget = ThrustersWidget((1020, 406), canvas)
+
+        self.myLogo = PhotoImage(file="frontend/resources/logoGif.gif")
+        canvas.create_image(
+            680, 80, image=self.myLogo
+        )
 
         canvas.create_text(
             self.WIDTH - 30,
