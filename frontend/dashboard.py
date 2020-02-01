@@ -71,6 +71,7 @@ class Dashboard:
         canvas.create_rectangle(
             1020, 406, 1330, 716, fill=accent_color, outline=accent_color
         )
+        thruster_widget = ThrustersWidget((1020, 406), canvas)
 
         canvas.create_text(
             self.WIDTH - 30,
@@ -84,6 +85,7 @@ class Dashboard:
         self.manipulator = Manipulator(self.root, comms)
 
         self.widgets = {
+            "ThrustersWidget": thruster_widget,
             "TemperatureWidget": temperature_widget,
             "GyroscopeWidget": gyro_widget,
             "PiConsoleWidget": console_widget,

@@ -5,8 +5,8 @@ from tkinter import PhotoImage
 
 class ThrustersWidget(Widget):
 
-    WIDTH = 400
-    HEIGHT = 400
+    WIDTH = 310
+    HEIGHT = 310
 
     def __init__(self, left_corner, canvas):
         self.photo = myImage = PhotoImage(
