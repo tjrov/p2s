@@ -4,7 +4,7 @@ from frontend.widget import (
     DepthWidget,
     GyroscopeWidget,
     HeadingWidget,
-    RovPiLogWidget,
+    PiConsoleWidget,
     TemperatureWidget,
     ThrustersWidget,
     ControllerWidget,
@@ -13,7 +13,6 @@ from frontend.widget import (
 from frontend.manipulator import Manipulator
 
 from tkinter import Tk, Canvas
-from enum import Enum
 
 
 class Dashboard:
@@ -31,17 +30,6 @@ class Dashboard:
 
         canvas = Canvas(width=self.WIDTH, height=self.HEIGHT, bg=background_color, bd=0,highlightbackground=background_color)
         canvas.pack()
-
-        # self.widgets = {
-        #     "ActuatorWidget": ActuatorWidget((0, 500), canvas),
-        #     "CameraWidget": CameraWidget((0, 700), canvas),
-        #     "DepthWidget": DepthWidget((0, 150), canvas),
-        #     "GyroscopeWidget": GyroscopeWidget((0, 0), canvas),
-        #     "HeadingWidget": HeadingWidget((250, 150), canvas),
-        #     ,
-        #     "ThrustersWidget": ThrustersWidget((100, 500), canvas,),
-        #     "ControllerWidget": ControllerWidget((0, 900), canvas,),
-        # }
 
         accent_color = "#1C326A"
 
@@ -86,7 +74,7 @@ class Dashboard:
 
         video_widget = VideoWidget((380, 158), canvas)
 
-        log_widget = RovPiLogWidget((380, 638), canvas)
+        console_widget = PiConsoleWidget((380, 638), canvas)
 
         canvas.create_rectangle(
             1020,
