@@ -55,14 +55,14 @@ class GyroscopeWidget(Widget):
             font=("Verdana", "32"),
             fill="#F3D067",
         )
-        self.update({"gyro_x": 0})
-        self.update({"gyro_y": 0})
-        self.update({"gyro_z": 0})
+        self.update({"gyro-x": 0})
+        self.update({"gyro-y": 0})
+        self.update({"gyro-z": 0})
 
     def update(self, data: dict):
-        if "gyro_x" in data:
-            self.canvas.itemconfig(self.text_id_x, text=str(data["gyro_x"]) + "°")
-        if "gyro_y" in data:
-            self.canvas.itemconfig(self.text_id_y, text=str(data["gyro_y"]) + "°")
-        if "gyro_z" in data:
-            self.canvas.itemconfig(self.text_id_z, text=str(data["gyro_z"]) + "°")
+        if "gyro-x" in data:
+            self.canvas.itemconfig(self.text_id_x, text=str(data["gyro-x"]) + "°")
+        if "gyro-y" in data:
+            self.canvas.itemconfig(self.text_id_y, text=str(data["gyro-y"]) + "°")
+        if "gyro-z" in data:
+            self.canvas.itemconfig(self.text_id_z, text=str(data["gyro-z"]) + "°")
