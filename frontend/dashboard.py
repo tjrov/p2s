@@ -20,13 +20,15 @@ class Dashboard:
     HEIGHT = 765
 
     def __init__(self):
+        background_color = "#081035"
+
         root = Tk()
         root.attributes("-topmost", True)
-        root.configure(background='#081035')
+        root.configure(background=background_color)
 
         self.root = root
 
-        canvas = Canvas(width=self.WIDTH, height=self.HEIGHT, bg="#081035")
+        canvas = Canvas(width=self.WIDTH, height=self.HEIGHT, bg=background_color, bd=0,highlightbackground=background_color)
         canvas.pack()
 
         # self.widgets = {
@@ -35,7 +37,7 @@ class Dashboard:
         #     "DepthWidget": DepthWidget((0, 150), canvas),
         #     "GyroscopeWidget": GyroscopeWidget((0, 0), canvas),
         #     "HeadingWidget": HeadingWidget((250, 150), canvas),
-        #     "TemperatureWidget": TemperatureWidget((250, 0), canvas),
+        #     ,
         #     "ThrustersWidget": ThrustersWidget((100, 500), canvas,),
         #     "ControllerWidget": ControllerWidget((0, 900), canvas,),
         # }
@@ -50,6 +52,7 @@ class Dashboard:
             fill=accent_color,
             outline=accent_color,
         )
+        temperature_widget = TemperatureWidget((40, 40), canvas)
 
         canvas.create_rectangle(
             30,
@@ -59,6 +62,7 @@ class Dashboard:
             fill=accent_color,
             outline=accent_color,
         )
+        heading = HeadingWidget((40, 285), canvas)
 
         canvas.create_rectangle(
             30,
@@ -68,6 +72,7 @@ class Dashboard:
             fill=accent_color,
             outline=accent_color,
         )
+        gyro_widget = GyroscopeWidget((40, 530), canvas)
 
         canvas.create_rectangle(
             380,

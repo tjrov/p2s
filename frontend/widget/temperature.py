@@ -2,8 +2,8 @@ from .widget import Widget
 
 
 class TemperatureWidget(Widget):
-    WIDTH = 250
-    HEIGHT = 150
+    WIDTH = 290
+    HEIGHT = 195
     THRESHOLD = 32
     DEGREE_SIGN = "\N{DEGREE SIGN}"
 

@@ -3,8 +3,8 @@ from .widget import Widget
 
 class HeadingWidget(Widget):
 
-    WIDTH = 250
-    HEIGHT = 350
+    WIDTH = 290
+    HEIGHT = 195
 
     def __init__(self, left_corner, canvas):
         self.left_x, self.left_y = left_corner
