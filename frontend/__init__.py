@@ -1,1 +1,1 @@
-from .frontend import Frontend
+from .dashboard import Dashboard

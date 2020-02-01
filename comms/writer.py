@@ -1,14 +1,11 @@
 from threading import Thread
 
 
-class UDPDebugWriter(Thread):
+class Writer(Thread):
     def __init__(self, socket, target_hostname, udp_port):
         Thread.__init__(self)
         self.socket = socket
         self.target = (target_hostname, udp_port)
-        print("CONFIGURATION: ")
-        print(self.socket)
-        print(self.target)
 
     def run(self):
         while True:
@@ -27,10 +24,16 @@ class UDPWriter(Thread):
         self.socket = socket
         self.target = (target_hostname, udp_port)
         self.queue = []
+        print("----------- CONFIGURATION -----------")
+        print(self.socket)
+        print(self.target)
+        print("-------------------------------------")
 
     def run(self):
         while True:
             if len(self.queue) > 0:
-                packet = self.queue.pop(0).get_packet()
-                for item in packet:
-                    self.socket.sendto(item, self.target)
+                message: bytes = self.queue.pop(0)
+                if not isinstance(message, bytes):
+                    continue
+
+                self.socket.sendto(message, self.target)
