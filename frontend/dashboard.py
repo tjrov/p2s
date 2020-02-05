@@ -11,7 +11,7 @@ from frontend.widget import (
 )
 from frontend.manipulator import Manipulator
 
-from tkinter import Tk, Canvas
+from tkinter import Tk, Canvas, PhotoImage
 
 
 class Dashboard:
@@ -65,25 +65,29 @@ class Dashboard:
         console_widget = PiConsoleWidget((380, 638), canvas)
 
         canvas.create_rectangle(
-            1020, 48, 1330, 358, fill=accent_color, outline=accent_color
+            1020, 68, 1330, 378, fill=accent_color, outline=accent_color
         )
 
-        canvas.create_rectangle(
-            1020, 406, 1330, 716, fill=accent_color, outline=accent_color
+        thruster_widget = ThrustersWidget((1020, 406), canvas)
+
+        self.logo = PhotoImage(file="frontend/resources/logo.gif")
+        canvas.create_image(
+            self.WIDTH - 30, 10, image=self.logo, anchor="ne"
         )
 
         canvas.create_text(
-            self.WIDTH - 30,
-            self.HEIGHT - 20,
+            1020,
+            25,
             fill="white",
-            font="Courier 10",
-            text="TJHSST Python Piloting Software",
-            anchor="se",
+            font="Courier 14",
+            text="Python Piloting Software",
+            anchor="nw",
         ),
 
         self.manipulator = Manipulator(self.root, comms)
 
         self.widgets = {
+            "ThrustersWidget": thruster_widget,
             "TemperatureWidget": temperature_widget,
             "GyroscopeWidget": gyro_widget,
             "PiConsoleWidget": console_widget,
