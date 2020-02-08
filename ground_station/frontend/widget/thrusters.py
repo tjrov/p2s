@@ -1,6 +1,10 @@
 from .widget import Widget
 
+import os
+
 from tkinter import PhotoImage
+
+FRONTEND_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class ThrustersWidget(Widget):
@@ -10,7 +14,7 @@ class ThrustersWidget(Widget):
 
     def __init__(self, left_corner, canvas):
         self.photo = myImage = PhotoImage(
-            file="frontend/resources/rov.gif"
+            file=os.path.join(FRONTEND_DIR, "resources/rov.gif")
         )
         self.left_x, self.left_y = left_corner
         self.canvas = canvas
