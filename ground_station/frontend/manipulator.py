@@ -1,5 +1,5 @@
 from enum import Enum
-from comms import Comms
+from ground_station.comms import Comms
 
 
 class Bindings(Enum):

@@ -1,18 +1,17 @@
-from comms import Comms
-from frontend.widget import (
-    ActuatorWidget,
+from ground_station.comms import Comms
+from .widget import (
     VideoWidget,
-    DepthWidget,
     GyroscopeWidget,
     PiConsoleWidget,
     TemperatureWidget,
     ThrustersWidget,
-    ControllerWidget,
 )
-from frontend.manipulator import Manipulator
+from .manipulator import Manipulator
 
+import os
 from tkinter import Tk, Canvas, PhotoImage
 
+FRONTEND_DIR = os.path.dirname(os.path.abspath(__file__))
 
 class Dashboard:
     WIDTH = 1360
@@ -70,7 +69,7 @@ class Dashboard:
 
         thruster_widget = ThrustersWidget((1020, 406), canvas)
 
-        self.logo = PhotoImage(file="frontend/resources/logo.gif")
+        self.logo = PhotoImage(file=os.path.join(FRONTEND_DIR, "resources/logo.gif"))
         canvas.create_image(
             self.WIDTH - 30, 10, image=self.logo, anchor="ne"
         )

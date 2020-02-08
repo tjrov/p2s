@@ -1,20 +1,13 @@
-from yaml import safe_load
+from ground_station import start_ground_station
 
-from sys import exit
+from sys import argv
 
-from frontend import Dashboard
-from comms import Comms
-
-if __name__ == "__main__":
-    try:
-        with open("config/config.yml") as f:
-            config = safe_load(f)
-    except:
-        print("Please copy config/template.yml to config/config.yml")
-        exit(0)
-
-    comms = Comms(config)
-    dashboard = Dashboard(comms)
-    comms.set_dashboard(dashboard)
-
-    dashboard.start()
+if __name__ == '__main__':
+    if 'ground_station' in ''.join(argv) or 'ground' in ''.join(argv):
+        start_ground_station()
+    elif 'flight_software' in ''.join(argv) or 'flight' in ''.join(argv):
+        pass
+    elif input("Run ground Station [Y]/n ? ").lower() != 'n':
+        start_ground_station()
+    else:
+        pass
