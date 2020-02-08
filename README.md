@@ -7,12 +7,14 @@ This is the codebase for the TJHSST Underwater ROV team's piloting software.
 The contributing guidelines can be found [here](CONTRIBUTING.md).
 
 ### Running the piloting software
-* Run `python main.py development` to run in a development environment
-* Run `python main.py` to run in a production environment
-    * Requires a serial connection to a device running the piloting framework code
-    * Requires at least one camera connection from the ROV
-* Run `python main.py test` to run tests
+* First copy over `config/template.yml` to `config/config.yml` and update the IP addresses for both the ground_station device and the `rov-pi`
 
-### Project Structure
-The project structure outline can be found [here](STRUCTURE.md)
+* Run `python main.py ground` to run the ground station software.
+* Run `python main.py ground_station` to run the ground station software.
 
+
+* Run `python main.py flight` to run the flight software on `rov-pi`
+* Run `python main.py flight_software` to run the flight software on `rov-pi`
+
+
+* Run `python main.py` to choose to run the ground station software or the flight software
