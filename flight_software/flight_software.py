@@ -3,7 +3,7 @@ from yaml import safe_load
 from sys import exit
 import os
 
-from .comms import Comms
+from .main_control_loop import MainControlLoop
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -15,6 +15,10 @@ def start_flight_software():
     except:
         print("Please copy config/template.yml to config/config.yml")
         exit(0)
+
+    mcl = MainControlLoop(config)
+    while True:
+        mcl.execute()
 
 
 if __name__ == "__main__":
