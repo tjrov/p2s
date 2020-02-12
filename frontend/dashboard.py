@@ -68,6 +68,8 @@ class Dashboard:
             1020, 68, 1330, 378, fill=accent_color, outline=accent_color
         )
 
+        depth_widget = DepthWidget((1030, 78), canvas)
+
         thruster_widget = ThrustersWidget((1020, 406), canvas)
 
         self.logo = PhotoImage(file="frontend/resources/logo.gif")
@@ -92,6 +94,7 @@ class Dashboard:
             "GyroscopeWidget": gyro_widget,
             "PiConsoleWidget": console_widget,
             "VideoWidget": video_widget,
+            "DepthWidget": depth_widget
         }
 
     def update_widget(self, widget_name: str, data: dict):
