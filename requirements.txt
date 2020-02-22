@@ -1,3 +1,4 @@
+Pillow
 appdirs==1.4.3
 attrs==19.3.0
 black==19.10b0
