@@ -14,7 +14,7 @@ pyglet==1.4.8
 pyparsing==2.4.5
 pyserial==3.4
 python-dateutil==2.8.1
-PyYAML==5.1.2
+PyYAML==5.4
 regex==2019.11.1
 six==1.13.0
 toml==0.10.0
